@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour {
 
@@ -35,13 +36,13 @@ public class SceneChanger : MonoBehaviour {
 
 	// Reloads the Level
 	public void Reload() {
-		Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene(1);
 	}
 
 	// Returns to main menu
 	public void Quit() {
 		Debug.Log("Quitting... returning to main menu");
-        Application.LoadLevel("MenuScene");
+        SceneManager.LoadScene(0);
 	}
 
 	// Show objects (menu items) with ShowOnPause tag
@@ -63,6 +64,6 @@ public class SceneChanger : MonoBehaviour {
 	// Load first level from main menu
     public void LoadLevel(string name) {
         Debug.Log("Levelid: " + name);
-        Application.LoadLevel(name);
+        SceneManager.LoadScene(1);
     }
 }
